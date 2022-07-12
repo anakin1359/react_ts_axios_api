@@ -1,10 +1,19 @@
+import axios from 'axios';
 import './App.css';
 
 function App() {
+  const jsonPUrl = "https://jsonplaceholder.typicode.com/todos"
+  const onClickFetchData = () => {
+    axios.get(jsonPUrl).then((res) => {
+      console.log(res);
+    });
+  };
+
   return (
     <div className="App">
-      <h1>Start React TypeScript Sample Project</h1>
-      <p>Let's develop with React!</p>
+      <button onClick={onClickFetchData}>
+        データ取得
+      </button>
     </div>
   );
 }
