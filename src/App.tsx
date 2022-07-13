@@ -2,14 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Todo } from './Todo';
-
-// 型定義
-type TodoType = {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import { TodoType } from "./types/todo"
 
 function App() {
   const jsonPUrl = "https://jsonplaceholder.typicode.com/todos"
@@ -28,6 +21,7 @@ function App() {
       </button>
       {todos.map((todo) => (
         <Todo
+          key={todo.id}
           title={todo.title}
           userId={todo.userId}
           completed={todo.completed}

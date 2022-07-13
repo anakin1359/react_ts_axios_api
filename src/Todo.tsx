@@ -1,10 +1,10 @@
-type TodoType = {
-    userId: number;
-    title: string;
-    completed?: boolean; // 末尾に「?」を付けることで必須ではことを示す
-}
+import { TodoType } from "./types/todo"
 
-export const Todo = (props: TodoType) => {
+// export const Todo = (props: TodoType) => {
+export const Todo = (
+    // props: Pick<TodoType, "userId" | "title" | "completed">
+    props: Omit<TodoType, "id"> // TodoTypeからid型のみ除外して型参照
+    ) => {
     const {
         title,
         userId,
