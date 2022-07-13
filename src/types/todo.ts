@@ -4,4 +4,4 @@ export type TodoType = {
     userId: number;
     title: string;
     completed?: boolean; // 末尾に「?」を付けることで必須ではことを示す
-}
+};

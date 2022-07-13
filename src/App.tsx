@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Todo } from './Todo';
 import { TodoType } from "./types/todo"
+import { Text } from './Text';
 
 function App() {
   const jsonPUrl = "https://jsonplaceholder.typicode.com/todos"
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <Text color='red' fontSize='20px'/>
       <button onClick={onClickFetchData}>
         データ取得
       </button>
@@ -29,6 +31,6 @@ function App() {
       ))}
     </div>
   );
-}
+};
 
 export default App;
